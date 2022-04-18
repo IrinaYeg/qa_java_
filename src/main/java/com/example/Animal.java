@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Animal {
 
-    public List<String> getFood(String animalKind) throws Exception {
+    public  List<String> getFood(String animalKind) throws Exception {
         if ("Травоядное".equals(animalKind)) {
-            return List.of("Трава", "Различные растения");
+            return List.of("Трава", "различные растения");
         } else if ("Хищник".equals(animalKind)) {
             return List.of("Животные", "Птицы", "Рыба");
         } else {
