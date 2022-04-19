@@ -4,9 +4,12 @@ import java.util.List;
 
 public class Alex extends Lion {
 
-    public Alex() throws Exception {
-        super("Самец");
+
+
+    public Alex(Feline feline) throws Exception {
+        super("Самец", feline);
     }
+
 
     public int getKittens() {
         return super.feline.getKittens();

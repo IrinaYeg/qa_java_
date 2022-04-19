@@ -10,6 +10,7 @@ import static org.junit.Assert.assertEquals;
 
 public class LionParameterizedTest {
     private final String sex;
+    Feline feline;
     private final boolean expectedResult;
 
     public LionParameterizedTest(String sex, boolean expectedResult) {
@@ -27,7 +28,7 @@ public class LionParameterizedTest {
 
     @Test
     public void constructorReturnsCorrectSex() throws Exception {
-        Lion lion = new Lion(sex);
+        Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
         boolean expected = expectedResult;
         assertEquals("Используйте допустимые значения пола животного - самец или самка",expected, actual);

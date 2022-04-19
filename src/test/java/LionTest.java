@@ -19,16 +19,14 @@ public class LionTest {
 
     @Test
     public void getKittensReturnKittensCount() throws Exception {
-        Lion lion = new Lion ("Самец");
-        lion.setFeline(feline);
+        Lion lion = new Lion ("Самец", feline);
         int actualKittensCount = lion.getKittens();
         Assert.assertEquals(0, actualKittensCount);
     }
 
     @Test
     public void getKittensReturnFoodList() throws Exception {
-        Lion lion = new Lion ("Самка");
-        lion.setFeline(feline);
+        Lion lion = new Lion ("Самка", feline);
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String>actualFood = lion.getFood();
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), actualFood);
@@ -37,7 +35,7 @@ public class LionTest {
     //если не указать "Самец" это или "Самка", тест проверит исключение при создании объекта класса Lion
     @Test(expected = Exception.class)
     public void lionInvalidValueOfSexExceptionTest() throws Exception {
-        Lion lion = new Lion("Еще не определился");
+        Lion lion = new Lion("Еще не определился", feline);
         lion.doesHaveMane();
     }
 }
